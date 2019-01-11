@@ -32,10 +32,10 @@ coral_clusters=5;
 % number of COTS individuals/agents to initialise on a map
 initial_cotspop=8;
 
-% duration of the simulation; this example simulates 30 days over 1 year;
-% longer time series should be run without animations
+% duration of the simulation; this example simulates 180 days over a single year;
+% it is advisable to run very long time series without animations
 years=1;
-days=30;
+days=180;
 
 % date when the simulation starts; in longer simulations it affects when the seasons will change etc.;
 % format is [year, month, day]
