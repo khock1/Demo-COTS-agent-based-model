@@ -9,6 +9,7 @@ function get_animations(row, col, coralchange, coralpop, cotspositions, cotspop)
 % changes colours over time
 filename = 'coraldecline.gif';
 colormap hot;
+coralchange(coralchange<0)=0;
 for n = 1:(size(coralchange,3)-1)
     coralmap2=zeros(row,col);
     for i=1:size(coralpop,1)%transform into frames
@@ -31,7 +32,7 @@ filename = 'cotsdistribution.gif';
 for n = 1:(size(cotspositions,3)-1)
     cotsmap2=zeros(row,col);
     for i=1:size(cotspop,1)
-        cotsmap2(cotspositions(i,2,n+1),cotspositions(i,3,n+1))=cotsmap2(cotspositions(i,2,n+1),cotspositions(i,3,n+1))+1;
+        cotsmap2(cotspositions(i,2,n+1),cotspositions(i,3,n+1))=1;
     end
     imagesc(cotsmap2);
     frame = getframe(1);
