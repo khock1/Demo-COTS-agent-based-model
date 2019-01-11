@@ -10,6 +10,7 @@ for t=1:size(coralchange,3)
     coral_cover(t)=nnz(coralchange(:,4,t)>0)/size(coralchange,1);
 end
 
+figure;
 plot(1:size(coralchange,3),coral_cover);
 title('Coral cover decline from initial cover', 'FontSize', 11);
 xlabel('Days');
