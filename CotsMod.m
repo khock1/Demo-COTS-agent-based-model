@@ -18,7 +18,7 @@ function [ cotspop, cotsmap, cotspositions, coralpop, coralmap, coralchange ] = 
 %occupied by coral at a given timestamp; also provides the initial distribution of coral populations
 coralmap = populatecoral( cellcoords, prccover, numclusters );
 
-%this sets up cotsmap as the map of locatiosn of COTS individuals for a
+%this sets up cotsmap as the map of locations of COTS individuals for a
 %given timestamp; also provides the initial distribution of COTS on a map
 cotsmap = populatecots( cellcoords, initcotsnum );%cotspop is the map of cells occupied by COTS agents
 
@@ -28,7 +28,7 @@ coralpop=zeros(size(find(coralmap),1),5);
 for c=1:size(find(coralmap),1)
     coralpop(c,1)=find(ismember(cellcoords,[coralpop(c,2) coralpop(c,3)], 'rows'));
 end
-coralpop(:,4)=1;%initial amount of coral seeded in a cell
+coralpop(:,4)=0.05;%initial amount of coral seeded in a cell; determines how fast the COTS will deplete it and move on
 coralpop(:,5)=1;%type of coral seeded; for now, ther eis only one type
 
 %this sets up the container to track changes in coral per cell
