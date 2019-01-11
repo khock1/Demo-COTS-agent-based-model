@@ -48,4 +48,4 @@ start_date=[2010,10,1];
 get_animations(row, col, coralchange, coralpop, cotspositions, cotspop);
 
 % draw a quick graph that shows proportional decline in coral cover from the initial value of 1
-draw_coral_decline(coral_change);
+plot_coral_decline(coral_change);
